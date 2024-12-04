@@ -92,27 +92,37 @@ fun IntentButtons(modifier : Modifier = Modifier) {
             Text("주소")
         }
 
-        Button(
-            modifier = modifier.fillMaxWidth(),
-            onClick = {
-                val uri = Uri.parse("tel:01011112222")
-                val intent = Intent(Intent.ACTION_VIEW, uri)
-                context.startActivity(intent)   // 교안과 다른 부분.
-            }
-        ) {
-            Text("전화")
-        }
+//        Button(
+//            modifier = modifier.fillMaxWidth(),
+//            onClick = {
+//                val uri = Uri.parse("tel:01011112222")
+//                val intent = Intent(Intent.ACTION_VIEW, uri)
+//                context.startActivity(intent)   // 교안과 다른 부분.
+//            }
+//        ) {
+//            Text("전화")
+//        }
+//
+//        Button(
+//            modifier = modifier.fillMaxWidth(),
+//            onClick = {
+//                val uri = Uri.parse("sms:01011112222")
+//                val intent = Intent(Intent.ACTION_VIEW, uri)
+//                intent.putExtra("sms_body", "전화 부탁드립니다.")
+//                context.startActivity(intent)   // 교안과 다른 부분.
+//            }
+//        ) {
+//            Text("문자")
+//        }
 
         Button(
             modifier = modifier.fillMaxWidth(),
             onClick = {
-                val uri = Uri.parse("sms:01011112222")
-                val intent = Intent(Intent.ACTION_VIEW, uri)
-                intent.putExtra("sms_body", "전화 부탁드립니다.")
-                context.startActivity(intent)   // 교안과 다른 부분.
+                val intent = Intent(context, SecondActivity::class.java)
+                context.startActivity(intent)
             }
         ) {
-            Text("문자")
+            Text("Activity")
         }
     }
 }
